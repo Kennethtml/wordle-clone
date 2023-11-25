@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class Keypad extends StatelessWidget {
+class TextKey extends StatelessWidget {
 
-  const Keypad({super.key , required this.text});
+  const TextKey({super.key , required this.text, required this.textAction});
 
   final String text;
+ final void Function(String input) textAction;
 
   @override
 
   Widget build(BuildContext context){
     return  TextButton(
-                        onPressed: () {},
+                        onPressed:()=> textAction(text),
                         style: ButtonStyle(
                           backgroundColor: MaterialStateProperty.all(
                               Color.fromRGBO(130, 131, 133, 1)),
