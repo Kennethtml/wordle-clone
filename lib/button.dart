@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:wordle_clone/providers/data_provider.dart';
 
-class TextKey extends StatelessWidget {
+class TextKey extends ConsumerWidget {
 
-  const TextKey({super.key , required this.text, required this.textAction});
+  const TextKey({super.key , required this.text});
 
   final String text;
- final void Function(String input) textAction;
+
 
   @override
 
-  Widget build(BuildContext context){
+  Widget build(BuildContext context,ref){
+   
     return  TextButton(
-                        onPressed:()=> textAction(text),
+                        onPressed:()=> ref.read(dataProvider.notifier).addText(text),
                         style: ButtonStyle(
                           backgroundColor: MaterialStateProperty.all(
                               Color.fromRGBO(130, 131, 133, 1)),

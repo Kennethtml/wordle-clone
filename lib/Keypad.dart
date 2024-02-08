@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:wordle_clone/button.dart';
 
 class Keypad extends StatefulWidget {
-   Keypad({super.key,required this.enterText, required this.backspace, required this.onEnter});
+   Keypad({super.key, required this.backspace, required this.onEnter});
 
 
-void Function(String letter)enterText;
+
 void Function() backspace;
 void Function() onEnter;
   @override
@@ -33,7 +33,7 @@ final List<String> firstRow = ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P']
                     SizedBox(
                       width: 35,
                       height:60,
-                      child:TextKey(text: e, textAction: widget.enterText,)
+                      child:TextKey(text: e)
                     ),
                   ],
                 )),],
@@ -50,7 +50,7 @@ final List<String> firstRow = ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P']
                     SizedBox(
                       width: 35,
                       height: 60,
-                      child:TextKey(text: e, textAction: widget.enterText)
+                      child:TextKey(text: e,)
                     ),
                   ],
                 )),
@@ -74,7 +74,7 @@ final List<String> firstRow = ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P']
                     SizedBox(
                       width: 35,
                       height: 60,
-                      child:TextKey(text: e, textAction: widget.enterText)
+                      child:TextKey(text: e, )
                     ),
                   ],
                 )), SizedBox(width: 5,) ,Container(
